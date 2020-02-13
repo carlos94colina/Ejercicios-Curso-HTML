@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicio 5 - Comunicación
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5.WebApplication.XMLHttpRequest", "Lab5.WebApplication.XMLHttpRequest\Lab5.WebApplication.XMLHttpRequest.csproj", "{B34B79E7-ED23-48AF-9A60-55995C9CE495}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Curso de CSharp", "Curso de CSharp", "{2073A14A-7A9E-46EC-99AA-33C4E80A05E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.ConsoleApp1", "Demo.ConsoleApp1\Demo.ConsoleApp1.csproj", "{A8609D10-D3D2-43D7-A201-C056832323B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{B34B79E7-ED23-48AF-9A60-55995C9CE495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B34B79E7-ED23-48AF-9A60-55995C9CE495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B34B79E7-ED23-48AF-9A60-55995C9CE495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8609D10-D3D2-43D7-A201-C056832323B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8609D10-D3D2-43D7-A201-C056832323B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8609D10-D3D2-43D7-A201-C056832323B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8609D10-D3D2-43D7-A201-C056832323B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{06E8B475-5146-4543-AFF0-5C00270A915A} = {780593EA-7EDE-4E7D-9492-EEEC8E15A673}
 		{5C93DC07-4BC9-4E53-AD39-74BB1FD945A4} = {780593EA-7EDE-4E7D-9492-EEEC8E15A673}
 		{B34B79E7-ED23-48AF-9A60-55995C9CE495} = {B246B876-26FE-45E7-847B-E4BF2756099B}
+		{A8609D10-D3D2-43D7-A201-C056832323B6} = {2073A14A-7A9E-46EC-99AA-33C4E80A05E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5604EE47-1F72-4383-8DE1-9E807E7F4F3C}

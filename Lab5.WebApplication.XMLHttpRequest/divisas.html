@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Conexión Remota</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-10">
+                <h1>Divisas</h1>
+                <hr />
+                <input id="i1" placeholder="Importe en Euros" class="form-control" />
+                <br />
+                <button id="b1" class="btn btn-block btn-primary">Consultar</button>
+            </div>
+            <div class="col"></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8 text-center"> </div>
+            <div class="col"></div>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById('b1').onclick = function () {
+            var xhr = new XMLHttpRequest();
+            var url = 'http://data.fixer.io/api/latest?access_key=6d1821c6f20577289a59b00cae0e5646&format=1&symbols=USD,GBP';
+            xhr.open('get', url, true);
+            xhr.setRequestHeader('Content-Type', 'text/plain');
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var r = JSON.parse(xhr.responseText);
+                    var importe = parseFloat(document.getElementById('i1').value);
+                    var col = document.getElementsByClassName('col-8')[0];
+
+                    //col.innerHTML = '<h2>' + (importe * parseFloat(r.rates.USA)).toFixed(2) + ' Dollar</h2>';
+                    //col.innerHTML += '<h2>' + (importe * parseFloat(r.rates.GBP)).toFixed(2) + ' Libras</h2>';
+
+                    col.innerHTML = ''
+                    for (var divisa in r.rates) {
+                        col.innerHTML += '<h2>' + (importe * parseFloat(r.rates[divisa])).toFixed(2) + ' ' + divisa + '</h2>';
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

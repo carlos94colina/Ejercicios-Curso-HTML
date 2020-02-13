@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo Suma</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-10">
+                <h1>Suma</h1>
+                <hr />
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label>Número 1</label>
+                    <input class="form-control" id="n1" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label>Número 2</label>
+                    <input class="form-control" id="n2" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label>Resultado</label>
+                    <input class="form-control" id="r1" />
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-9 text-right">
+                <button id="b1" class="btn btn-danger">Sumar</button>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('b1').onclick = function () {
+            var xhr = new XMLHttpRequest();
+
+            var n1 = document.getElementById('n1').value;
+            var n2 = document.getElementById('n2').value;
+            var datos = 'n1=' + n1 + '&n2=' + n2;
+            var url = '/api/suma.ashx?' + datos;
+
+            xhr.open('get', url, true);
+            xhr.setRequestHeader('Content-Type', 'text/plain');
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('r1').value = xhr.responseText; 
+                }
+            };
+            xhr.send();
+        };
+    </script>
+</body>
+</html>
