@@ -150,6 +150,14 @@ namespace Universidad
         { 
             float media = 0;
 
+            foreach (var n in notas)
+            {
+                media += n;
+                //media = media + n;
+            }
+
+            media = media / notas.Length;
+
             return media;
         }
 
