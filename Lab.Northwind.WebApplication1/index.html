@@ -77,11 +77,31 @@
                     </div>
                 </div>
                 <br />
-
             </div>
             <div class="col-1"></div>
         </div>
-
     </div>
+    <script>
+        document.getElementById('b1').onclick = function (e) {
+            var xhr = new XMLHttpRequest();
+
+            var url = '/api/clientes.ashx?id=' + document.getElementById('CustomerID').value;
+
+            xhr.open('get', url, true);
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var datos = JSON.parse(xhr.responseText);
+
+                    document.getElementById('CompanyName').value = datos[0].CompanyName;
+                    document.getElementById('ContactName').value = datos[0].ContactName;
+                    document.getElementById('Phone').value = datos[0].Phone;
+                    document.getElementById('Fax').value = datos[0].Fax;
+                    document.getElementById('Country').value = datos[0].Country;
+                    document.getElementById('City').value = datos[0].City;
+                }
+            };
+            xhr.send();
+        }
+    </script>
 </body>
 </html>
