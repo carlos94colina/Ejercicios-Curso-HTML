@@ -13,18 +13,19 @@
                 <input id="i1" class="form-control" />
             </div>
         </div>
-
+        <br />
         <div class="row">
             <div class="col-8">
                 <select class="form-control" id="s1">
                     <option value="cuenta">Cuenta Letras</option>
+                    <option value="fecha">Fecha y Hora actual</option>
                 </select>
             </div>
             <div class="col-4">
                 <button id="b1" class="btn btn-success btn-block">Iniciar</button>
             </div>
         </div>
-
+        <br />
         <div class="row">
             <div class="col text-center">
                 <h1 class="text-success"><b>Resultado:</b> <span id="r1"></span></h1>
@@ -33,7 +34,23 @@
 
     </div>
     <script>
+        document.getElementById('b1').onclick = function (e) {
+            var xhr = new XMLHttpRequest();
 
+            var datos = 'texto=' + document.getElementById('i1').value;
+            datos += '&comando=' + document.getElementById('s1').value;
+
+            var url = '/api/comandos.ashx?' + datos;
+
+            xhr.open('get', url, true);
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var r = xhr.responseText;
+                    document.getElementById('r1').innerHTML = r;
+                }
+            }
+            xhr.send();
+        }
     </script>
 </body>
 </html>
