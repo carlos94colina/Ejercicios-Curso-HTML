@@ -18,9 +18,8 @@ namespace Lab.Northwind.WebApplication1.api
             var db = new ModelNorthwind();
             db.Configuration.LazyLoadingEnabled = false;
 
-            var desc = context.Request["desc"];
-
-            if (desc == null) desc = "";
+            var desc = context.Request.Params["desc"];
+            //if (desc == null) desc = "";
 
             var productos = db.Products
                 .Where(r => r.ProductName.Contains(desc))

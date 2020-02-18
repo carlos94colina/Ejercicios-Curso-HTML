@@ -52,6 +52,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models2\Alphabetical_list_of_products.cs" />
+    <Compile Include="Models2\Categories.cs" />
+    <Compile Include="Models2\Category_Sales_for_1997.cs" />
+    <Compile Include="Models2\Current_Product_List.cs" />
+    <Compile Include="Models2\CustomerDemographics.cs" />
+    <Compile Include="Models2\Customers.cs" />
+    <Compile Include="Models2\Customer_and_Suppliers_by_City.cs" />
+    <Compile Include="Models2\Employees.cs" />
+    <Compile Include="Models2\Invoices.cs" />
+    <Compile Include="Models2\ModelNorthwind2.cs" />
+    <Compile Include="Models2\Orders.cs" />
+    <Compile Include="Models2\Orders_Qry.cs" />
+    <Compile Include="Models2\Order_Details.cs" />
+    <Compile Include="Models2\Order_Details_Extended.cs" />
+    <Compile Include="Models2\Order_Subtotals.cs" />
+    <Compile Include="Models2\Products.cs" />
+    <Compile Include="Models2\Products_Above_Average_Price.cs" />
+    <Compile Include="Models2\Products_by_Category.cs" />
+    <Compile Include="Models2\Product_Sales_for_1997.cs" />
+    <Compile Include="Models2\Region.cs" />
+    <Compile Include="Models2\Sales_by_Category.cs" />
+    <Compile Include="Models2\Sales_Totals_by_Amount.cs" />
+    <Compile Include="Models2\Shippers.cs" />
+    <Compile Include="Models2\Summary_of_Sales_by_Quarter.cs" />
+    <Compile Include="Models2\Summary_of_Sales_by_Year.cs" />
+    <Compile Include="Models2\Suppliers.cs" />
+    <Compile Include="Models2\Territories.cs" />
     <Compile Include="Models\Alphabetical_list_of_products.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Category_Sales_for_1997.cs" />

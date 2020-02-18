@@ -19,6 +19,7 @@ namespace Demo.ConsoleAppNorthwind
                 .ThenBy(r => r.City)
                 .ToList();
 
+
             foreach (var item in clientes4)
             {
                 Console.WriteLine("{0} - {1} - {2} ({3})",
