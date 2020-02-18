@@ -23,6 +23,8 @@
                 </div>
                 <div class="row">
                     <div class="col text-right">
+                        <img src="images/ajax-loader.gif" id="wait" style="display:none" />
+                        &nbsp;
                         <button id="b1" class="btn btn-success">Buscar</button>
                     </div>
                 </div>
@@ -60,5 +62,42 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('b1').onclick = function (e) {
+            if (document.getElementById('i1').value == '') return;
+
+            var xhr = new XMLHttpRequest();
+            var url = '/api/productos.ashx?desc=' + document.getElementById('i1').value;
+
+            xhr.open('get', url, true);
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var datos = JSON.parse(xhr.responseText);
+
+                        if (datos.length == 0) alert('Productos no encontrados');
+                        else {
+                            document.getElementsByTagName('tbody')[0].innerHTML = '';
+                            for (var i = 0; i < datos.length; i++) {
+                                var html = '<tr>';
+                                html += '<td>' + datos[i].ProductID + '</td>';
+                                html += '<td>' + datos[i].ProductName + '</td>';
+                                html += '<td class="text-rigth">' + parseFloat(datos[i].UnitPrice).toFixed(2).replace('.', ',') + '</td>';
+                                html += '<td class="text-rigth">' + datos[i].UnitsInStock + '</td>';
+                                html += '</tr>';
+
+                                document.getElementsByTagName('tbody')[0].innerHTML += html;
+                            }
+                        }
+                    }
+                    else alert('Ufff');
+
+                    document.getElementById('wait').style.display = 'none';
+                }
+            };
+            document.getElementById('wait').style.display = 'inline';
+            xhr.send();
+        }
+    </script>
 </body>
 </html>

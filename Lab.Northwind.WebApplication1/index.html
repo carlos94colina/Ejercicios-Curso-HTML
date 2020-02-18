@@ -73,6 +73,8 @@
                 <br />
                 <div class="row">
                     <div class="col text-right">
+                        <img src="images/ajax-loader.gif" id="wait" style="display:none;" />
+                        &nbsp;
                         <button id="b1" class="btn btn-success">Consultar</button>
                     </div>
                 </div>
@@ -83,23 +85,30 @@
     </div>
     <script>
         document.getElementById('b1').onclick = function (e) {
-            var xhr = new XMLHttpRequest();
+            if (document.getElementById('CustomerID').value == '') return;
 
+            var xhr = new XMLHttpRequest();
             var url = '/api/clientes.ashx?id=' + document.getElementById('CustomerID').value;
 
             xhr.open('get', url, true);
             xhr.onreadystatechange = function (e) {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var datos = JSON.parse(xhr.responseText);
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var datos = JSON.parse(xhr.responseText);
 
-                    document.getElementById('CompanyName').value = datos[0].CompanyName;
-                    document.getElementById('ContactName').value = datos[0].ContactName;
-                    document.getElementById('Phone').value = datos[0].Phone;
-                    document.getElementById('Fax').value = datos[0].Fax;
-                    document.getElementById('Country').value = datos[0].Country;
-                    document.getElementById('City').value = datos[0].City;
+                        document.getElementById('CompanyName').value = datos[0].CompanyName;
+                        document.getElementById('ContactName').value = datos[0].ContactName;
+                        document.getElementById('Phone').value = datos[0].Phone;
+                        document.getElementById('Fax').value = datos[0].Fax;
+                        document.getElementById('Country').value = datos[0].Country;
+                        document.getElementById('City').value = datos[0].City;
+                    }
+                    else alert('Ufff');
+
+                    document.getElementById('wait').style.display = 'none';
                 }
             };
+            document.getElementById('wait').style.display = 'inline';
             xhr.send();
         }
     </script>
