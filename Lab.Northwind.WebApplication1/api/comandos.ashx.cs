@@ -53,6 +53,25 @@ namespace Lab.Northwind.WebApplication1.api
                     resultado = array.Count(r => vocales2.Contains(r)).ToString();
 
                     break;
+                case "consonantes":
+                    var array2 = texto.ToLower().ToArray<char>();
+
+                    int contador5 = 0;
+
+                    foreach (var letra in array2)
+                    {
+                        if (letra != 'a' && letra != 'e' && letra != 'i' && letra != 'o' && letra != 'u' && letra != ' ') contador5++;
+                    }
+
+                    resultado = contador5.ToString();
+
+
+                    //////////////////////////////////////////////////////////////////////////////
+
+                    char[] vocales3 = new char[] { 'a', 'e', 'i', 'o', 'u', ' '};
+                    resultado = array2.Count(r => !vocales3.Contains(r)).ToString();
+
+                    break;
                 default:
                     resultado = "Comando no valido";
                     break;
