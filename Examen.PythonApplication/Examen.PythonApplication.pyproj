@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>e7567ced-22f0-4581-839b-d1ba9d861f55</ProjectGuid>
+    <ProjectGuid>85072487-7782-4a7d-ae05-99dc79f3cf12</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>04-Requests--Ejercicio-2.py</StartupFile>
+    <StartupFile>Examen.PythonApplication.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Demos.PythonApplication</Name>
-    <RootNamespace>Demos.PythonApplication</RootNamespace>
+    <Name>Examen.PythonApplication</Name>
+    <RootNamespace>Examen.PythonApplication</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,33 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="01-Calcular-Edad--Ejercicio.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="02-Listas--Ejercicio.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="02-Listas-Ordenar-y-Filtrar.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="03-Base-de-Datos--Ejercicio.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="03-Base-de-Datos--mongoDB.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="03-Base-de-Datos--SQLite-Ejercicio.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="03-Base-de-Datos--SQLite.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="04-Request--Ejercicio.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="04-Requests--Ejercicio-2.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Examen.PythonApplication.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https" />
+</head>
+
+<body>
+    <br />
+    <br />
+    <div class="container-sm">
+        <div class="row">
+            <div class="col-sm-1"> </div>
+            <div class="col-sm-10">
+                <hr />
+                <div class="text-center"><h5>Número de Parada</h5></div>
+                <hr />
+                <input id="i1" type="text" class="form-control text-center" />
+                <br />
+                <button id="b1" class="btn btn-success btn-block">Consultar</button>
+            </div>
+            <div class="col-sm-1"> </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1"> </div>
+            <div class="col-sm-10">
+                <div id="r1">
+
+                </div>
+            </div>
+            <div class="col-sm-1"> </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('b1').onclick = function (e) {
+
+            var parada = document.getElementById('i1').value;
+            if (isNaN(parada)) return true;
+
+            var token = null;
+            var url = 'https://openapi.emtmadrid.es/v2/mobilitylabs/user/login/';
+            const options = {
+                method: 'get',
+                data: {},
+                headers: {
+                    'X-ApiKey': '<tu ApiKey>',
+                    'X-ClientId': '<tu ClientId>',
+                    'passKey': '<tu passKey>'
+                },
+                responseType: 'json'
+            };
+
+            try {
+                cordova.plugin.http.setDataSerializer('json');
+
+                cordova.plugin.http.sendRequest(url, options, function (response) {
+                    if (response.status === 200) token = response.data['data'][0]['accessToken'];
+
+                    //Si el tenemos token iniciamos la segunda llamada
+                    if (token != null) {
+                        url = 'https://openapi.emtmadrid.es/v2/transport/busemtmad/stops/' + parada + '/arrives/';
+
+                        const options2 = {
+                            method: 'post',
+                            data: { cultureInfo: "ES", Text_StopRequired_YN: "Y", Text_EstimationsRequired_YN: "Y", Text_IncidencesRequired_YN: "N", DateTime_Referenced_Incidencies_YYYYMMDD: "20200303" },
+                            headers: { 'accessToken': token },
+                            responseType: 'json'
+                        };
+                        
+                        cordova.plugin.http.sendRequest(url, options2, function (response) {
+                            var datos = response.data["data"][0]["Arrive"];
+                            document.getElementById('r1').innerHTML = '';
+
+                            for (var i in datos) {
+                                document.getElementById('r1').innerHTML += '<h6 class="text-center">' + datos[i]['line'] + ' en ' + (datos[i]['line'] / 60).toFixed(1).replace('.', ',') + ' min. (' + datos[i]['DistanceBus'] + ' metros)</h6>';
+                            }                            
+                        }, function (response) {
+                            document.getElementById('r1').innerHTML += '<h6 class="text-danger">' + response.error + '</h6>';
+                            document.getElementById('r1').innerHTML += '<h6 class="text-danger">' + response.status + '</h6>';
+                        });
+                    } else {
+                        document.getElementById('r1').innerHTML += '<h6 class="text-danger">Error de Conexión, token null</h6>';
+                    }
+                }, function (response) {
+                    //Error al obtener el Token
+                    document.getElementById('r1').innerHTML += '<h6 class="text-danger">' + response.error + '</h6>';
+                    document.getElementById('r1').innerHTML += '<h6 class="text-danger">' + response.status + '</h6>';
+                });
+            } catch (e) {
+                //Error de ejecución del código
+                document.getElementById('r1').innerHTML += '<p>' + e + '</p>';
+            }
+        }
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+</body>
+</html>

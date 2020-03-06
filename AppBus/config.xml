@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "es.empresa.appbus"
+    versionCode = "10"
+    version     = "1.0.0">
+ 
+  <name>AppBus</name>
+
+  <description>
+    Consulta el tiempo de espera de los autubuses de la EMT
+  </description>
+
+  <author href="https://www.demo.com" email="borja@demo.com">
+    Borja Cabeza
+  </author>
+
+  <content src="index.html" />
+  
+  <preference name="permissions"              value="none"/>
+  <preference name="orientation"              value="portrait" />
+  <preference name="target-device"            value="universal" />
+  <preference name="fullscreen"               value="true" />
+  <preference name="SplashScreen"             value="Loading...."/>
+  <preference name="SplashScreenDelay"        value="10000"/>
+  <preference name="phonegap-version"         value="cli-7.1.0" />
+
+  <platform   name="ios" />
+  <platform   name="android" />
+  <platform   name="winphone" />
+
+  <icon       src="res/icon.png" />
+  <splash     src="res/splash.png" />
+  
+  <platform name="android">
+    <splash src="res/splash.png" />
+  </platform>
+  
+  <platform name="ios">
+    <splash src="res/splash.png" />
+  </platform>
+
+  <plugin name="cordova-plugin-whitelist"     spec="~1.3.4" />
+  <access origin="*" />
+  <allow-navigation href="*" />
+  <allow-intent href="*" />
+
+  <plugin name="cordova-plugin-advanced-http" spec="~2.4.1" source="npm" />
+  <plugin name="cordova-plugin-vibration"     spec="~3.1.1" />
+  <plugin name="cordova-plugin-splashscreen"  spec="~5.0.3" />
+</widget>

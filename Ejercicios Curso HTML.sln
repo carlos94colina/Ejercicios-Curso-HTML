@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicio 5 - Comunicación
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5.WebApplication.XMLHttpRequest", "Lab5.WebApplication.XMLHttpRequest\Lab5.WebApplication.XMLHttpRequest.csproj", "{B34B79E7-ED23-48AF-9A60-55995C9CE495}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Curso de CSharp", "Curso de CSharp", "{2073A14A-7A9E-46EC-99AA-33C4E80A05E3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos de CSharp", "Demos de CSharp", "{2073A14A-7A9E-46EC-99AA-33C4E80A05E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.ConsoleApp1", "Demo.ConsoleApp1\Demo.ConsoleApp1.csproj", "{A8609D10-D3D2-43D7-A201-C056832323B6}"
 EndProject
@@ -41,7 +41,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicio 6 - Northwind", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Northwind.WebApplication1", "Lab.Northwind.WebApplication1\Lab.Northwind.WebApplication1.csproj", "{A5137913-CCD6-494B-B2AA-C8F0C5ADE834}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios Node JS", "Ejercicios Node JS", "{8C7E8C2A-05C1-4525-8DFB-FC22A3707162}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios 7 - Node JS", "Ejercicios 7 - Node JS", "{8C7E8C2A-05C1-4525-8DFB-FC22A3707162}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodejsConsoleApp", "NodejsConsoleApp\NodejsConsoleApp.njsproj", "{D41351EF-99B9-41EA-BB88-75DEEB84C92F}"
 EndProject
@@ -49,9 +49,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam.WebApplication", "Exam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examen HTML + JS", "Examen HTML + JS", "{6DE4EA64-C41A-4F85-A42E-439CD8CC8E29}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proyecto de Python", "Proyecto de Python", "{9529AC83-BBD7-4CF3-B0EF-C2DE504A1624}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios 8 - Python", "Ejercicios 8 - Python", "{9529AC83-BBD7-4CF3-B0EF-C2DE504A1624}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Demos.PythonApplication", "Demos.PythonApplication\Demos.PythonApplication.pyproj", "{E7567CED-22F0-4581-839B-D1BA9D861F55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examen Python", "Examen Python", "{A985129D-BF9E-4F7A-B11A-70F17E75CF71}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Examen.PythonApplication", "Examen.PythonApplication\Examen.PythonApplication.pyproj", "{85072487-7782-4A7D-AE05-99DC79F3CF12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios 9 - AppBus", "Ejercicios 9 - AppBus", "{4317C920-FFD3-4246-9C48-90D591DF3058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBus", "AppBus\AppBus.csproj", "{E566DCBD-831F-43E7-8282-2738D3CC9CAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +121,12 @@ Global
 		{08AFF1ED-F0F6-432C-939A-336402B47880}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E7567CED-22F0-4581-839B-D1BA9D861F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E7567CED-22F0-4581-839B-D1BA9D861F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85072487-7782-4A7D-AE05-99DC79F3CF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85072487-7782-4A7D-AE05-99DC79F3CF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E566DCBD-831F-43E7-8282-2738D3CC9CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E566DCBD-831F-43E7-8282-2738D3CC9CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E566DCBD-831F-43E7-8282-2738D3CC9CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E566DCBD-831F-43E7-8282-2738D3CC9CAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,6 +146,8 @@ Global
 		{D41351EF-99B9-41EA-BB88-75DEEB84C92F} = {8C7E8C2A-05C1-4525-8DFB-FC22A3707162}
 		{08AFF1ED-F0F6-432C-939A-336402B47880} = {6DE4EA64-C41A-4F85-A42E-439CD8CC8E29}
 		{E7567CED-22F0-4581-839B-D1BA9D861F55} = {9529AC83-BBD7-4CF3-B0EF-C2DE504A1624}
+		{85072487-7782-4A7D-AE05-99DC79F3CF12} = {A985129D-BF9E-4F7A-B11A-70F17E75CF71}
+		{E566DCBD-831F-43E7-8282-2738D3CC9CAD} = {4317C920-FFD3-4246-9C48-90D591DF3058}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5604EE47-1F72-4383-8DE1-9E807E7F4F3C}
